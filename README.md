@@ -1,103 +1,223 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ta">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio | Ajith</title>
-    <!-- Tailwind CSS CDN is linked here -->
+    <title>Outfit2Reel AI | Demo Studio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        /* Custom CSS styles */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f0f4f8; /* Soft background color */
-        }
-        .section-padding {
-            padding: 80px 20px;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #080808; color: #eee; }
+        .purple-glow { box-shadow: 0 0 20px rgba(157, 80, 187, 0.3); }
+        .glass-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); backdrop-filter: blur(10px); }
+        .gradient-text { background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     </style>
 </head>
-<body class="text-gray-800">
-    <!-- Header and Navigation Bar -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-indigo-600 rounded-md p-2">
-                Ajith
-            </a>
-            <div class="hidden md:flex space-x-6">
-                <a href="#about" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-300">About Me</a>
-                <a href="#skills" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-300">Skills</a>
-                <a href="#projects" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-300">Projects</a>
-                <a href="#contact" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-300">Contact</a>
-            </div>
-            <!-- Mobile Menu -->
-            <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                </svg>
-            </button>
-        </nav>
-        <!-- Mobile Menu Content -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg py-2">
-            <a href="#about" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">About Me</a>
-            <a href="#skills" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Skills</a>
-            <a href="#projects" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Projects</a>
-            <a href="#contact" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Contact</a>
-        </div>
-    </header>
+<body class="overflow-x-hidden">
 
-    <!-- Hero Section -->
-    <section class="section-padding bg-gradient-to-r from-indigo-500 to-purple-600 text-white flex items-center justify-center text-center">
-        <div class="max-w-3xl">
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">
-                Hello, I'm <br class="hidden sm:block"> <span class="text-yellow-300">Ajith</span>
-            </h1>
-            <p class="text-lg sm:text-xl mb-8 opacity-90">
-                I'm a content creator, passionate about creating innovative solutions.
-            </p>
-            <a href="#projects" class="inline-block bg-white text-indigo-600 font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100 transform hover:scale-105 transition duration-300">
-                View My Work
-            </a>
+    <!-- Header -->
+    <nav class="p-6 flex justify-between items-center max-w-7xl mx-auto">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center shadow-lg">
+                <i class="fas fa-bolt text-white"></i>
+            </div>
+            <span class="text-xl font-black tracking-tighter uppercase italic">Outfit2Reel <span class="text-purple-500">AI</span></span>
+        </div>
+        <div class="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest text-gray-400">
+            <a href="#" class="hover:text-white transition">Showcase</a>
+            <a href="#" class="hover:text-white transition">Pricing</a>
+            <a href="#" class="hover:text-white transition text-purple-400 underline">Demo Mode</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="py-16 px-6 text-center max-w-4xl mx-auto">
+        <div class="inline-block px-4 py-1 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-400 text-[10px] font-bold uppercase tracking-widest mb-6">
+            Optimized for Sora 2 & Tamil Ads
+        </div>
+        <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight uppercase italic">
+            Viral Reels in <span class="gradient-text">60 Seconds.</span>
+        </h1>
+        <p class="text-gray-400 text-lg mb-10 leading-relaxed">
+            Upload your dress image. Get a 50-second cinematic script for a female character with high-converting Tamil captions. 
+        </p>
+    </section>
+
+    <!-- Studio Area -->
+    <section class="px-6 pb-20">
+        <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10">
+            
+            <!-- Input Card -->
+            <div class="glass-card p-8 rounded-[2rem] space-y-6">
+                <div class="flex items-center gap-2 mb-4">
+                    <i class="fas fa-wand-sparkles text-purple-500"></i>
+                    <h2 class="font-black uppercase italic">The Studio (Demo)</h2>
+                </div>
+
+                <!-- Custom Upload -->
+                <div id="dropzone" class="aspect-video rounded-3xl border-2 border-dashed border-white/10 flex flex-col items-center justify-center cursor-pointer hover:border-purple-500/50 transition bg-white/5 relative overflow-hidden group">
+                    <input type="file" id="imageInput" class="hidden" accept="image/*">
+                    <div id="previewWrap" class="absolute inset-0 hidden">
+                        <img id="previewImg" src="" class="w-full h-full object-cover">
+                    </div>
+                    <div id="uploadUI" class="text-center">
+                        <div class="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                            <i class="fas fa-cloud-upload-alt text-gray-400"></i>
+                        </div>
+                        <p class="text-white font-bold text-sm uppercase">Upload Dress Image</p>
+                        <p class="text-gray-500 text-xs mt-1">Select a clear dress/saree photo</p>
+                    </div>
+                </div>
+
+                <!-- Config -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-black text-gray-500 uppercase">Style</label>
+                        <select class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white outline-none">
+                            <option>Tamil Traditional</option>
+                            <option>Luxury Boutique</option>
+                            <option>Streetwear</option>
+                        </select>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-black text-gray-500 uppercase">Character</label>
+                        <select class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white outline-none">
+                            <option>Female (Lead)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button id="demoBtn" class="w-full py-5 rounded-2xl bg-white text-black font-black text-lg uppercase italic hover:bg-purple-500 hover:text-white transition transform active:scale-95 shadow-xl shadow-purple-500/10">
+                    Generate Demo Script
+                </button>
+            </div>
+
+            <!-- Output Card -->
+            <div class="glass-card p-8 rounded-[2rem] flex flex-col min-h-[450px]">
+                <div class="flex justify-between items-center mb-6">
+                    <span id="statusLabel" class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Waiting for input...</span>
+                    <button id="copyBtn" class="hidden bg-white/5 px-4 py-2 rounded-xl text-[10px] font-bold uppercase hover:bg-white/10 transition">
+                        <i class="fas fa-copy"></i> Copy All
+                    </button>
+                </div>
+
+                <!-- Result Content -->
+                <div id="resultContent" class="flex-1 overflow-y-auto space-y-6 hidden">
+                    <div class="animate-in fade-in slide-in-from-bottom-4 duration-700">
+                        <h4 class="text-purple-400 font-bold text-xs uppercase mb-2">Sora 2 Cinematic Prompt:</h4>
+                        <p id="soraPrompt" class="text-sm text-gray-300 font-mono leading-relaxed bg-black/40 p-4 rounded-xl border border-white/5 italic">
+                            <!-- Injected -->
+                        </p>
+                    </div>
+                    <div class="animate-in fade-in slide-in-from-bottom-4 duration-1000">
+                        <h4 class="text-pink-400 font-bold text-xs uppercase mb-2">Tamil Sales Script:</h4>
+                        <div id="tamilScript" class="text-lg font-bold text-white leading-relaxed p-4 bg-purple-900/10 rounded-xl border border-purple-500/10">
+                            <!-- Injected -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Placeholder -->
+                <div id="placeholder" class="flex-1 flex flex-col items-center justify-center text-center opacity-20">
+                    <i class="fas fa-film text-6xl mb-4"></i>
+                    <p class="text-sm italic">Your AI-generated marketing content will appear here.</p>
+                </div>
+
+                <!-- Mock Loader -->
+                <div id="loader" class="hidden flex-1 flex flex-col items-center justify-center text-center">
+                    <div class="w-12 h-12 border-4 border-purple-500/20 border-t-purple-500 rounded-full animate-spin mb-4"></div>
+                    <p class="text-sm font-black uppercase tracking-widest text-purple-400 animate-pulse">AI Directing Your Reel...</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- About Me Section -->
-    <section id="about" class="section-padding bg-white">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-4">About Me</h2>
-            <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-                I am a content creator with [Your Years of Experience] years of experience. I'm passionate about implementing innovative ideas and solving complex problems. My goal is to create great user experiences.
-            </p>
-            <div class="flex justify-center space-x-4">
-                <a href="#" class="text-gray-600 hover:text-indigo-600 transition duration-300">
-                    <img src="https://placehold.co/120x120/d1d5db/000?text=Your+Photo" alt="Your Photo" class="rounded-full shadow-md">
-                </a>
-            </div>
+    <!-- Footer -->
+    <footer class="py-20 border-t border-white/5 text-center px-6">
+        <p class="text-gray-500 font-bold text-[10px] uppercase tracking-widest mb-4">Need a custom AI bot or website integration?</p>
+        <p class="text-purple-400 font-black text-lg mb-8 italic">Email us: automation@outfit2reel.ai</p>
+        <div class="flex justify-center gap-6 opacity-30">
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-linkedin"></i>
         </div>
-    </section>
+    </footer>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section-padding bg-gray-100">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-8">My Skills</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                <!-- Skill Card 1 -->
-                <div class="bg-white rounded-xl shadow-lg p-6 transform hover:scale-105 transition duration-300">
-                    <h3 class="text-xl font-bold mb-2">Video Editing</h3>
-                    <p class="text-gray-600">Adobe Premiere Pro, Final Cut Pro, DaVinci Resolve</p>
-                </div>
-                <!-- Skill Card 2 -->
-                <div class="bg-white rounded-xl shadow-lg p-6 transform hover:scale-105 transition duration-300">
-                    <h3 class="text-xl font-bold mb-2">Writing & Storytelling</h3>
-                    <p class="text-gray-600">Copywriting, Scriptwriting, Blogging</p>
-                </div>
-                <!-- Skill Card 3 -->
-                <div class="bg-white rounded-xl shadow-lg p-6 transform hover:scale-105 transition duration-300">
-                    <h3 class="text-xl font-bold mb-2">Social Media Management</h3>
-                    <p class="text-gray-600">YouTube, Instagram, TikTok, Twitter</p>
-                </div>
-                <!-- Skill Card 4 -->
-                <div class="bg-white rounded-xl shadow-lg p-6 transform hover:scale-105 transition duration-300">
+    <script>
+        const imageInput = document.getElementById('imageInput');
+        const dropzone = document.getElementById('dropzone');
+        const previewWrap = document.getElementById('previewWrap');
+        const previewImg = document.getElementById('previewImg');
+        const uploadUI = document.getElementById('uploadUI');
+        const demoBtn = document.getElementById('demoBtn');
+        const loader = document.getElementById('loader');
+        const placeholder = document.getElementById('placeholder');
+        const resultContent = document.getElementById('resultContent');
+        const soraPrompt = document.getElementById('soraPrompt');
+        const tamilScript = document.getElementById('tamilScript');
+        const statusLabel = document.getElementById('statusLabel');
+        const copyBtn = document.getElementById('copyBtn');
+
+        // Image Preview Logic
+        dropzone.onclick = () => imageInput.click();
+        imageInput.onchange = (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (ev) => {
+                    previewImg.src = ev.target.result;
+                    previewWrap.classList.remove('hidden');
+                    uploadUI.classList.add('hidden');
+                };
+                reader.readAsDataURL(file);
+            }
+        };
+
+        // Mock Generation Logic (No API needed)
+        demoBtn.onclick = () => {
+            if (!previewImg.src) {
+                alert("Mothala Dress Photo upload pannunga!");
+                return;
+            }
+
+            // Start UI
+            placeholder.classList.add('hidden');
+            resultContent.classList.add('hidden');
+            loader.classList.remove('hidden');
+            statusLabel.innerText = "Analyzing Texture...";
+            demoBtn.disabled = true;
+
+            // Fake processing delay
+            setTimeout(() => {
+                loader.classList.add('hidden');
+                resultContent.classList.remove('hidden');
+                copyBtn.classList.remove('hidden');
+                statusLabel.innerText = "Generated (Sora 2 Ready)";
+                demoBtn.disabled = false;
+
+                // Set Sample Data
+                soraPrompt.innerText = "Cinematic 50s fashion film, Sora 2 rendering. A beautiful female model walking in slow-motion through a luxury South Indian temple-style corridor. The fabric of the outfit flows naturally with air currents. Extreme close-up on the embroidery texture. Soft golden hour lighting hitting the model's face. 8k resolution, hyper-realistic, fashion runway aesthetic.";
+                
+                tamilScript.innerHTML = "வணக்கம் மக்களே! ✨ <br><br> நீங்க தேடிக்கிட்டு இருந்த அந்த Perfect மார்டன் பாரம்பரிய உடை இதோ! <br><br> 💎 பிரீமியம் தரம் <br> 💎 கண்கவர் டிசைன் <br><br> இப்போதே ஆர்டர் செய்ய லிங்க்-ஐ கிளிக் பண்ணுங்க! 🛍️";
+            }, 2500);
+        };
+
+        // Copy Feature
+        copyBtn.onclick = () => {
+            const text = soraPrompt.innerText + "\n\n" + tamilScript.innerText;
+            const temp = document.createElement('textarea');
+            temp.value = text;
+            document.body.appendChild(temp);
+            temp.select();
+            document.execCommand('copy');
+            document.body.removeChild(temp);
+            alert("Copied successfully!");
+        };
+    </script>
+</body>
+</html>
+
                     <h3 class="text-xl font-bold mb-2">Graphic Design</h3>
                     <p class="text-gray-600">Adobe Photoshop, Canva, Illustrator</p>
                 </div>
